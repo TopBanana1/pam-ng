@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# pamng - Parsed Address Mapper - Next Generation
+# pam-ng - Parsed Address Mapper - Next Generation
 # Parse Nmap .gnmap or .xml and emit flexible, scriptable outputs.
 
 set -euo pipefail
@@ -46,10 +46,10 @@ declare -A PRESETS=(
 
 usage() {
   cat <<'USAGE'
-pamng - Parse Nmap .gnmap or .xml and print selected fields
+pam-ng - Parse Nmap .gnmap or .xml and print selected fields
 
 USAGE:
-  pamng [INPUT.gnmap|INPUT.xml|-] [options]
+  pam-ng [INPUT.gnmap|INPUT.xml|-] [options]
 
 OUTPUT TEMPLATES:
   -f/--format with tokens:
@@ -185,8 +185,8 @@ detect_type() {
     if head -c 128 "$f" 2>/dev/null | grep -q '<nmaprun'; then echo "xml"; else echo "gnmap"; fi
   else
     # stdin: sniff
-    if head -c 128 | tee /tmp/pamng.peek.$$ >/dev/null 2>&1; then :; fi
-    if grep -q '<nmaprun' /tmp/pamng.peek.$$ 2>/dev/null; then echo "xml"; else echo "gnmap"; fi
+    if head -c 128 | tee /tmp/pam-ng.peek.$$ >/dev/null 2>&1; then :; fi
+    if grep -q '<nmaprun' /tmp/pam-ng.peek.$$ 2>/dev/null; then echo "xml"; else echo "gnmap"; fi
   fi
 }
 input_type="$(detect_type "$input_file")"
@@ -515,7 +515,7 @@ if (( stream )); then
   :
 else
   if [[ -z "$rendered" ]]; then
-    (( verbose )) && echo "pamng: no matches after filters." >&2
+    (( verbose )) && echo "pam-ng: no matches after filters." >&2
     exit 0
   fi
 fi
