@@ -1,8 +1,8 @@
-# pamng
+p# pam-ng
 **Parsed Address Mapper – Next Generation**  
 Flexible, fast, and script-friendly parser for Nmap `.gnmap` and `.xml` outputs.
 
-`pamng` reads Nmap scan results and outputs filtered, formatted lists for reporting or as input to other tools (e.g., `httpx`, `nuclei`, `gowitness`).
+`pam-ng` reads Nmap scan results and outputs filtered, formatted lists for reporting or as input to other tools (e.g., `httpx`, `nuclei`, `gowitness`).
 
 ---
 
@@ -44,21 +44,21 @@ Flexible, fast, and script-friendly parser for Nmap `.gnmap` and `.xml` outputs.
 ## Installation
 ```bash
 # Clone repository
-git clone https://github.com/yourname/pamng.git
-cd pamng
+git clone https://github.com/yourname/pam-ng.git
+cd pam-ng
 
 # Make executable
-chmod +x pamng
+chmod +x pam-ng
 
 # Optionally move to PATH
-sudo mv pamng /usr/local/bin/
+sudo mv pam-ng /usr/local/bin/
 ```
 
 ---
 
 ## Usage
 ```bash
-pamng [INPUT.gnmap|INPUT.xml|-] [options]
+pam-ng [INPUT.gnmap|INPUT.xml|-] [options]
 ```
 
 ### Common Examples
